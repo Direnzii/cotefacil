@@ -3,7 +3,7 @@ import json
 
 class ConversorArquivoDeFalta:
 
-    def dump_para_Arquivo_falta(self, arquivo, novo_arquivo):
+    def dump_para_arquivo_falta(self, arquivo, novo_arquivo):
         with open(arquivo, 'r') as arquivo:
             contador = 0
             saida = '1;<CNPJ_CLIENTE>;3.3\n'
@@ -39,7 +39,7 @@ class ConversorArquivoDeFalta:
                 codigo_produto = itens[i]['codigo_produto']
                 descricao_produto = itens[i]['descricao_produto']
                 quantidade_cotada = itens[i]['quantidade_cotada']
-                saida += f'2;{ean};{quantidade_cotada};{codigo_produto};{descricao_produto};.\n'
+                saida += f'2;{ean};{quantidade_cotada};{codigo_produto};{descricao_produto};.;0\n'
                 i += 1
         else:
             while i < len(clientes):
@@ -114,10 +114,10 @@ def main():
             # (1 = json do mid, 2 = DTO, 3 = dump)
             if argumento1 == 1:
                 converter.json_para_arquivo_de_falta(file, nome_arquivo)
-            if argumento1 == 2:
+            elif argumento1 == 2:
                 converter.json_dto_para_arquivo_falta(file, nome_arquivo)
-            if argumento1 == 3:
-                converter.dump_para_Arquivo_falta(file, nome_arquivo)
+            elif argumento1 == 3:
+                converter.dump_para_arquivo_falta(file, nome_arquivo)
             else:
                 converter.deu_ruim()
         except:
