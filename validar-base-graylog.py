@@ -5,8 +5,8 @@ import json
 def autenticar():
     graylog = navegador.new_page()
     graylog.goto('http://logs-dash.zitausch.com:9000/streams/5de90061913ecb0854c57900/search?rangetype=relative&fields=message%2Csource&width=1920&highlightMessage=&relative=172800&q=')
-    usuario = 'jamil.almeida'
-    senha = 'abc123'
+    usuario = 'COLOCAR USUARIO'
+    senha = 'COLOCAR SENHA'
     graylog.fill('div.form-group:nth-child(2) > span:nth-child(1) > input:nth-child(1)', usuario)
     graylog.fill('div.form-group:nth-child(3) > span:nth-child(1) > input:nth-child(1)', senha)
     graylog.locator('xpath=/html/body/div/div/div/div/form/div[3]/button').click()
