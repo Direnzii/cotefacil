@@ -11,8 +11,8 @@ class FerramentaSuporte:
 
     def autenticar(self, ambiente):
         time.sleep(0.5)
-        usuario = 'jamil.almeida@cotefacil.com'
-        senha = '1GcwOQP8'
+        usuario = 'COLOCAR O USUARIO'
+        senha = 'COLOCAR A SENHA'
         ambiente.fill('xpath=//*[@id="frm:email"]', usuario)
         ambiente.fill('xpath=//*[@id="frm:senha"]', senha)
         ambiente.locator('xpath=/html/body/div/article/div/div/form/div/div/button/span[1]').click()
