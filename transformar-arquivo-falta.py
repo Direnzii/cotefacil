@@ -74,14 +74,7 @@ class ConversorArquivoDeFalta:
         print("\nComandos:\npython transformar-arquivo-falta.py 1 <nome-do-arquivo.txt> <nome-do-novo-arquivo.txt>  ---JSON do middleware para arquivo de falta\n"
               "python transformar-arquivo-falta.py 2 <nome-do-arquivo.txt> <nome-do-novo-arquivo.txt>  ---JSON DTO do crawler para arquivo de falta\n"
               "python transformar-arquivo-falta.py 3 <nome-do-arquivo.txt> <nome-do-novo-arquivo.txt>  ---Copia da base do fornecedor para arquivo de falta\n\n"
-              "SELECT para o dump da base (Opção 3):\n\nselect produtorepresentante.id, produto.codbarras, produtorepresentante.descricao\n"
-              "from representantefornecedor rf\ninner join fornecedor f on f.id = rf.idfornecedor\ninner join representante r on r.id = RF.IDREPRESENTANTE\n"
-              "inner join conta c on c.id = r.id\ninner join contato cont on cont.id = C.IDCONTATO\ninner join produtorepresentante on produtorepresentante.idrepresentante = r.id\n"
-              "inner join produto on produto.id = produtorepresentante.idproduto\nwhere R.TIPORESPOSTA <> 0 AND f.cnpj in ('66438011000166')\n"
-              "and CONT.NOME like '%REPRE%' AND PRODUTOREPRESENTANTE.ATIVO = 1 AND r.ativo = 1; --- DUMP DOS PRODUTOS COM O CNPJ DO FORNECEDOR E REPRESENTANTE (OL)\n\n"
-              "select pf.codprodutofornecedor, p.codbarras, pf.descricao\nfrom produtofornecedor pf\ninner join fornecedor f on f.id = pf.idfornecedor\n"
-              "inner join produto p on p.id = pf.idproduto\nwhere f.cnpj = '43214055000107'\nand pf.ativo = 1\n"
-              "order by F.DATAATUALIZACAO desc;  --- DUMP DOS PRODUTOS COM O CNPJ DO FORNECEDOR E REPRESENTANTE\n")
+              "SELECT para o dump da base (Opção 3): Consultar o desenvolvedor do codigo")
 
 def main():
     converter = ConversorArquivoDeFalta()
@@ -106,7 +99,8 @@ def main():
         except:
             converter.deu_ruim()
     input("Pressione qualquer tecla para iniciar...\n**** CONVERSOR DE JSON E BASE PARA ARQUIVO DE FALTA ****")
-    argumento1 = input('(1) - JSON (mid) para Arquivo de falta\n(2) - JSON (DTO saida) para Arquivo de falta\n(3) - DUMP da base no modelo para Arquivo de falta\nInsira a opção: ')
+    argumento1 = input('(1) - JSON (mid) para Arquivo de falta\n(2) - JSON (DTO saida) para Arquivo de falta\n
+    (3) - DUMP da base no modelo para Arquivo de falta\nInsira a opção: ')
     file = input("Insira o nome do arquivo JSON ou DUMP: ") #nome do arquivo json ou dump
     nome_arquivo = input("Insira o nome do novo arquivo que o programa irá gerar: ") #nome do arquivo novo
     if argumento1 == 1:
