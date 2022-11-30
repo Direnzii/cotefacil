@@ -114,15 +114,3 @@ with sync_playwright() as p:
     pagina.goto('http://monitoramento.apicotefacil.com:8280/CTFL-Monitoramento/login.jsf')
     ###################################
     reenviar.cotacoes()
-
-
-
-
-
-
-
-
-
-
-
-
