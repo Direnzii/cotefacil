@@ -4,8 +4,8 @@ import sys
 
 class reenviar:
     def autenticar(self):
-        login = "thiago.direnzi@cotefacil.com"
-        senha = "I5Po*KR#Hl41"
+        login = "COLOCAR USUARIO"
+        senha = "COLOCAR SENHA"
         print('Tentando inserir as credenciais.')
         pagina.fill('xpath=//*[@id="username"]', login)
         pagina.fill('xpath=//*[@id="password"]', senha)
