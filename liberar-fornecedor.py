@@ -10,8 +10,8 @@ class liberarForn():
 
     def autenticar(self):
         time.sleep(0.5)
-        usuario = 'thiago.direnzi'
-        senha = 'XLy489uP'
+        usuario = 'COLOCAR USUARIO'
+        senha = 'COLOCAR SENHA'
         site.fill('xpath=//*[@id="frmLogin:username"]', usuario)
         site.fill('xpath=//*[@id="frmLogin:password"]', senha)
         site.locator('xpath=//*[@id="frmLogin:loginButton"]').click()
@@ -127,6 +127,3 @@ with sync_playwright() as p:
     liberar_forn.liberar_fornecedor()
 
 
-
-#thiago.direnzi
-#XLy489uP
